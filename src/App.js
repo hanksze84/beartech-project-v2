@@ -1,26 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Nav from './Nav';
+import Landing from './Landing';
+import Projects from './Projects';
+import ProjectDetail from './ProjectDetail';
+import EmployerLogin from './EmployerLogin';
+import StudentLogin from './StudentLogin';
+import {BrowserRouter as Router, Switch, Route } from 'react-router-dom'; 
 
-function App() {
+const App = () => {
+  
+  // const APP_KEY = "8c3b0d8c7913b089bcb7c90514badd1a"; 
+  // const REQ_URL = "http://data.orghunter.com/v1/charitysearch?user_key=8c3b0d8c7913b089bcb7c90514badd1a&state=CA"; 
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router>
+      <div className = "App">
+        <Nav /> 
+        <Switch> 
+          <Route path="/" exact component={Landing} />
+          <Route path="/studentlogin" component={StudentLogin} />
+          <Route path="/employerlogin" component={EmployerLogin} />
+          <Route path="/projects" exact component={Projects} />
+          <Route path="/projects/:id" component={ProjectDetail} /> 
+        </Switch>
+      </div>
+    </Router>
+  );  
 }
 
 export default App;
