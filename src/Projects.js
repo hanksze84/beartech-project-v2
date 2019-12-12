@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'; 
 import './App.css'; 
 import { Link } from "react-router-dom"; 
-import ProjectDetail from './ProjectDetail';
+// import ProjectDetail from './ProjectDetail';
 
 
 
@@ -30,7 +30,7 @@ const Projects = () => {
                         <h2 key={item.ein}>
                             <Link to={`/projects/${item.ein}`}> {item.charityName} </Link>  
                         </h2>
-                        <img src="https://picsum.photos/200/300?random={item.ein}"></img>  
+                        <img alt="Organization Logo" src="https://picsum.photos/200/300?random={item.ein}"></img>  
                      </div>  
                 //   <ProjectDetail />
                 ))}
