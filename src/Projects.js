@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react'; 
 import './App.css'; 
-import { Link } from "react-router-dom"; 
+// import { Link } from "react-router-dom"; 
 // import ProjectDetail from './ProjectDetail';
-
+import ProjectCard from './Components/ProjectCard'; 
 
 
 const Projects = () => {
@@ -22,22 +22,20 @@ const Projects = () => {
 
 
     return(
+        <>
+        <h1>Projects Page</h1>
         <div> 
-            <h1>This is the Projects Page</h1> 
-            <div> 
-                {items.map(item => ( 
-                    <div>
-                        <h2 key={item.ein}>
-                            <Link to={`/projects/${item.ein}`}> {item.charityName} </Link>  
-                        </h2>
-                        <img alt="Organization Logo" src="https://picsum.photos/200/300?random={item.ein}"></img>  
-                     </div>  
-                //   <ProjectDetail />
-                ))}
-            </div>
-            <button>Learn More</button>
-        </div> 
-    );
+            {items.map((project) =>
+            <ProjectCard 
+                ein={project.ein}
+                charity={project.charityName}
+            />
+        )} 
+        </div>     
+        </>
+    ); 
+
 }
 
 export default Projects; 
+        

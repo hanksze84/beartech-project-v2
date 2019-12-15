@@ -9,8 +9,8 @@ const ProjectDetail = (props) => {
     const fetchItem = async () => { 
         const data = await fetch(`http://data.orghunter.com/v1/charitysearch?user_key=8c3b0d8c7913b089bcb7c90514badd1a&state=CA&ein=${props.match.params.id}`);
         const response = await data.json();  
-        console.log(response); 
-        setItem(response.data);
+        console.log(response.data[0]); 
+        setItem(response.data[0]);
     }
 
     useEffect(() => {
@@ -22,7 +22,7 @@ const ProjectDetail = (props) => {
             <div>
                 <h1>Organization Name</h1> 
                 <h2>{item.charityName}</h2> 
-                <img alt="Organization Logo" src="https://picsum.photos/200/300?random={item.ein}"></img>  
+                <img alt="Organization Logo" src={`https://picsum.photos/200/300?random=${item.ein}`}></img>  
             </div>
     );
 }
