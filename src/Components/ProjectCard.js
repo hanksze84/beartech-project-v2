@@ -1,16 +1,37 @@
 import React from "react";
 import {Link} from 'react-router-dom';
+import Card from 'react-bootstrap/Card';
+import Badge from 'react-bootstrap/Badge';
+import Image from 'react-bootstrap/Image';
 
 const ProjectCard = (props) => { 
     return(
-        <div> 
-        <h1 key={props.ein}>
-            <Link to={`/projects/${props.ein}`}> {props.charity} </Link>  
-        </h1>
-        <h2>{props.ein}</h2>
-        {/* The following code has issue,, the injection is not working, the picture is not dynamically changin */}
-        <img src={`https://picsum.photos/200/300?random=${props.ein}`}></img>       
-    </div>
+        <Card>
+          <a href={props.id}>
+            <Image src={props.Attachments} rounded fluid/>
+            {/* <Card.Img variant="top" src={props.Attachments} /> */}
+          </a>
+          <Card.Body>
+            <Card.Title>{props.CompanyName}</Card.Title>
+            <Card.Text>
+            {props.ProjectDescription}
+            </Card.Text>
+          </Card.Body>
+          <Card.Footer>
+            <div>    
+                <Badge variant="warning">{props.ProjectSubcategory}</Badge>
+            </div>
+          </Card.Footer>
+        </Card>
+    
+        //     <div> 
+    //     <h1>
+    //         <Link to={`/projects/${props.ein}`}> {props.charity} </Link>  
+    //     </h1>
+    //     <h2>{props.ein}</h2>
+    //     {/* The following code has issue,, the injection is not working, the picture is not dynamically changin */}
+    //     <img src={`https://picsum.photos/200/300?random=${props.ein}`}></img>       
+    // </div>
     );
 }
 

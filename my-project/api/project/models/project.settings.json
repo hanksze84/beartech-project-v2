@@ -1,0 +1,28 @@
+{
+  "info": {
+    "name": "project"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "ProjectName": {
+      "type": "string"
+    },
+    "AffiliatedOrganization": {
+      "type": "string"
+    },
+    "OrganizationLogo": {
+      "collection": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "OrganizationEIN": {
+      "type": "biginteger"
+    }
+  },
+  "connection": "default",
+  "collectionName": "projects"
+}
