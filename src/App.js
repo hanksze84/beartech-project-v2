@@ -11,8 +11,6 @@ import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 const App = () => {
   
-  // const APP_KEY = "8c3b0d8c7913b089bcb7c90514badd1a"; 
-  // const REQ_URL = "http://data.orghunter.com/v1/charitysearch?user_key=8c3b0d8c7913b089bcb7c90514badd1a&state=CA"; 
   
   return (
     <Router>

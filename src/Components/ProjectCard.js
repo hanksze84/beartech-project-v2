@@ -7,7 +7,7 @@ import Image from 'react-bootstrap/Image';
 const ProjectCard = (props) => { 
     return(
         <Card>
-          <a href={props.id}>
+          <a href={ 'projects/' + props.id }>
             <Image src={props.Attachments} rounded fluid/>
             {/* <Card.Img variant="top" src={props.Attachments} /> */}
           </a>
